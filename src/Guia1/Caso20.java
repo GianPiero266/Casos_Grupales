@@ -1,24 +1,29 @@
 package Guia1;
 
 import java.util.Scanner;
-
+import java.text.DecimalFormat;
 public class Caso20 {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("#.00");
 		
-		System.out.println("Valor de la venta");
-		int v = sc.nextInt();
+		System.out.print("Precio: ");
+		float precio = sc.nextFloat();
 		
-		double va = v*0.42;
+		System.out.print("Cantidad: ");
+		int cantidad = sc.nextInt();
 		
-		double t = v+va;
+		float venta = precio * cantidad;
+		float incremento = venta + (venta * 0.42f);
 		
-		System.out.println("\n --------------------");
-		System.out.println("\n Resultados ");
-		System.out.println("\n --------------------");
-		System.out.println("Valor Aumentado en 42%: " + t);
-		
-				
+		System.out.println("--------------------------");
+		System.out.println("    R E S U L T A D O S    ");
+		System.out.println("---------------------------");
+		System.out.println("Valor de la venta: " + df.format(venta));
+		System.out.println("Valor incrementado: " + df.format(incremento));
+
 	}
 
 }
+

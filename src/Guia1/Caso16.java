@@ -1,35 +1,34 @@
 package Guia1;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Caso16 {
+
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		// TODO Auto-generated method stub
+		Scanner a = new Scanner(System.in);		
+		DecimalFormat b = new DecimalFormat("#.00");
 		
-		System.out.println("Ingrese las horas trabajadas: ");
-		int ht = sc.nextInt();
-		 
-		System.out.println("Ingrese tarifa por hora: ");
-		float th = sc.nextFloat();
+		float sueldo = 0, bono = 0, total = 0, total_en_dolares = 0;
 		
-		float s = (float) ht*th;
+		System.out.print("Ingrese horas trabajadas: ");
+		int horas_trabajadas = a.nextInt();
 		
-		float b = (float) 0.05*(ht*th);
+		System.out.print("Ingrese tarifa por hora: ");
+		float tarifa_por_hora = a.nextFloat();
 		
-		float t = (float) s+b;
+		sueldo = horas_trabajadas * tarifa_por_hora;
+		bono = (float)(sueldo * 0.05);
+		total = sueldo + bono;
+		total_en_dolares = (float)(total / 3.24);
 		
-		double d = t*3.24;
-		
-		System.out.println("\n--------------------");
-		System.out.println("\nResultados ");
-		System.out.println("\n--------------------");
-		System.out.println("Sueldo: " + s);
-		System.out.println("Bono: " + b);
-		System.out.println("Total: " + t);
-		System.out.println("Total en dólares: " + d);
-		
-		
-		
+		System.out.println("\nResultados");
+		System.out.println("Sueldo: " + b.format(sueldo));
+		System.out.println("Bono: " + b.format(bono));
+		System.out.println("Total: " + b.format(total));
+		System.out.println("Total en dólares: " + b.format(total_en_dolares));
 	}
 
 }
+

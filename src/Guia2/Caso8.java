@@ -1,40 +1,31 @@
 package Guia2;
 
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class Caso8 {
-      public static void main(String[] args) {
-    	  Scanner sc = new Scanner(System.in);
-    	  DecimalFormat df = new DecimalFormat("#.00");
-    	  
-    	  System.out.println("Ingrese nombre del(a) alumno(a): ");
-    	  String nombre = sc.nextLine();
-    	  
-    	  System.out.println("Ingrese nota 1: ");
-    	  float n1 = sc.nextFloat();
-    	  
-    	  System.out.println("Ingrese nota 2: ");
-    	  float n2 = sc.nextFloat();
-    	  
-    	  System.out.println("Ingrese número de asistencias [1-12].: ");
-    	  float asistencia = sc.nextFloat();
-    	  
-    	  float promedio = n1 * 0.3f + n2 * 0.7f;
-    	  float pa = asistencia / 12 * 100;
-    	  
-    	  String estado = "Desaprobado";
-    	  
-    	  if (promedio >= 13 && pa >= 70)
-    		  estado = "Aprobado";
-    	  
-    	  System.out.println("\n---Resultados---");
-    	  System.out.println("Alumno(a)....: " + nombre.toUpperCase());
-    	  System.out.println("Promedio....: " + df.format(promedio));
-    	  System.out.println("Asistencia...: " + df.format(pa) + "%");
-    	  System.out.println("Estado....: " + estado);
-     
-    			  
-      }
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Ingrese nota: ");
+		int nota = sc.nextInt();
+		
+		String mensaje = "Sin palabras";
+		
+		if (nota >= 8 && nota <= 10)
+			mensaje = "Malo";
+		else if (nota >= 11 && nota <= 14)
+			mensaje = "Regular";
+		else if (nota >= 15 && nota <= 17)
+			mensaje = "Notable";
+		else if (nota >= 18 && nota <= 20)
+			mensaje = "Excelente";
+		else if (nota > 20)
+			mensaje = "La nota maxima es 20";
+		
+		System.out.println("--- R E S U L T A D O ---");
+		System.out.println("Estado obtenido: " + mensaje);
+	}
 }
+
 

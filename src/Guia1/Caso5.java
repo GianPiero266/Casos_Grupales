@@ -3,30 +3,28 @@ package Guia1;
 import java.util.Scanner;
 
 public class Caso5 {
-	
+
 	public static void main(String[] args) {
-	Scanner sc = new Scanner (System.in);
-	
-	float n1= 0 , n2 = 0;
-	
-	System.out.println("Ingrese Primer número: ");
-	int p1 = sc.nextInt();
-	
-	System.out.println("Ingrese Segundo número: ");
-	int p2 = sc.nextInt();
-	
-	 float promedio = (p1 + p2) / 2;
-	 float aumentou = (float) (p1 + (0.2 * p1));
-	 float aumentod = (float) (p2 - (p2 * 0.3));
-	
-	System.out.println("-----------");
-	System.out.println("RESULTADOS");
-	System.out.println("----------");
-	System.out.println("resultado 1: " + promedio );
-	System.out.println("resultado 2: " + aumentou);
-	System.out.println("resultado 3: " + aumentod);
-	
-	
+		// TODO Auto-generated method stub
+		
+		Scanner a = new Scanner(System.in);
+		
+		float n1 = 0, n2 = 0, promedio = 0, aumento = 0, disminucion = 0;
+
+		System.out.print("Ingrese el primer número: ");
+		n1 = a.nextFloat();
+		
+		System.out.print("Ingrese el segundo número: ");
+		n2 = a.nextFloat();
+		
+		promedio = (n1 + n2) / 2;
+		aumento = (n1 * 120) / 100;
+		disminucion = (n2 * 70) / 100;
+		
+		System.out.println("\nEl promedio de los números es: " + promedio);
+		System.out.println("El primer número aumentado en 20% es: " + aumento);
+		System.out.println("El segundo número disminuido en 30% es: " + disminucion);
+	}
 
 }
-}
+

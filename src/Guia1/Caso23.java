@@ -1,38 +1,35 @@
 package Guia1;
 
 import java.util.Scanner;
-
+import java.text.DecimalFormat;
 public class Caso23 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Ingrese nombre de producto: ");
-		String p = sc.next();
-		
-		System.out.println("Ingrese precio: ");
-		float precio = sc.nextFloat();
-		
-		System.out.println("Cantidad: ");
-		int cantidad = sc.nextInt();
-		
-		float importe = (float) precio * cantidad;
-		
-		double igv = (float) importe * 0.18;
-		
-		double descuento = (float) importe * 0.03;
-		
-		double total = (float) importe + igv - descuento;
-		
-		System.out.println("Resultados ");
-		System.out.println("-----------");
-		System.out.println("Importe: " + importe);
-		System.out.println("IGV: " + igv );
-		System.out.println("Descuento: " + descuento);
-		System.out.println("Total: " + total);
-		
-		
-	}
-	
-	
 
-}
+	public static void main(String[] args) {
+				Scanner sc = new Scanner(System.in);
+				DecimalFormat df = new DecimalFormat("#.00");
+				
+				System.out.print("Producto: ");
+				String producto = sc.nextLine();
+				
+				System.out.print("Precio: ");
+				float precio = sc.nextFloat();
+				
+				System.out.print("Cantidad: ");
+				int cantidad = sc.nextInt();
+				
+				float importe = precio * cantidad;
+				float igv = importe * 0.18f;
+				float dscto = importe * 0.03f;
+				float total = importe - dscto + igv;
+				
+				System.out.println("---------------------------");
+				System.out.println("    R E S U L T A D O S    ");
+				System.out.println("---------------------------");
+				System.out.println("Importe: " + df.format(importe));
+				System.out.println("IGV: " + igv);
+				System.out.println("Descuento: " + dscto);
+				System.out.println("Total: " + df.format(total));
+			}
+		}
+
+
